@@ -1,0 +1,16 @@
+.jumbotron{
+  opacity: 0.75;
+  text-align: center;
+}
+.card{
+  text-align: center;
+  
+}
+
+body {
+  background-image: url(https://www.elsetge.cat/myimg/f/114-1141705_download-tamagotchi-wallpaper-iphone.png);
+}
+
+#hideMe {
+  display: none;
+}

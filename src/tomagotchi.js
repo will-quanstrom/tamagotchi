@@ -1,3 +1,4 @@
+import $ from 'jquery';
 export class Tomagotchi {
   constructor(name,food,toilet,sleep,play,sleepLevel) {
     this.name = name,
@@ -14,10 +15,17 @@ export class Tomagotchi {
   setToilet(){
     this.toiletInterval = setInterval(() => {
       this.toilet--;
-    }, 1000);
-    if(this.toilet == 0){
-      return 'Your tomagotchi pooped!';
-    }
+      if(this.toilet == -1){
+        clearInterval(this.toiletInterval);
+        return $('#tamaName').text('Your tomagotchi pooped!');
+      }
+      document.getElementById('toiletCounter').textContent = (this.toilet);
+    }, 100);
+
+      // let request = new XMLHttpRequest();
+      // query = 'poop';
+      // response.onreadystatechange;
+
   }
   hungryGotchi () {
     if (this.food <= 0) {

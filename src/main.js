@@ -12,9 +12,17 @@ $(document).ready(function(){
     var name = $('#nameInput').val();
     var tama = new Tomagotchi(name);
       $('#tamaName').text(`Meet your new best friend, ${name}!`)
+      let query = "tamagotchi";
+      tama.setToilet();
+      $('#hideMe').show();
+
+
+      $('#toiletTitle').text(`Hurry, ${name} will go to the bathroom in 20 seconds!`);
+
+      // $('#toiletCounter').text(tama.toilet);
 
 let request = new XMLHttpRequest();
-const url = 'https://api.giphy.com/v1/gifs/search?api_key=eA5QrPG0kgbvymKiUi3pJqKZ0ZY54uIB&q=tamagotchi'
+const url = `https://api.giphy.com/v1/gifs/search?api_key=eA5QrPG0kgbvymKiUi3pJqKZ0ZY54uIB&q=${query}`
 
 request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
